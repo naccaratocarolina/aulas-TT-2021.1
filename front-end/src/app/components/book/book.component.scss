@@ -1,0 +1,27 @@
+ion-card {
+	display: flex;
+	flex-direction: row;
+	height: 25vh;
+}
+
+h1 {
+	font-size: 1.7em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+h3 {
+	font-size: 0.9em;
+}
+
+/* Botao */
+button {
+	background: transparent;
+}
+
+button ion-icon {
+	font-size: 2em;
+	color: #B22222;
+}

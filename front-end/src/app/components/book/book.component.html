@@ -1,5 +1,13 @@
 <ion-card>
   <img src="{{book.cover}}">
-  <h1>{{book.title}}</h1>
-  <h2></h2>
+  <div id="book-info">
+    <h1>{{book.title}}</h1>
+    <h2>{{book.subtitle}}</h2>
+    <h3>{{book.authors}}</h3>
+    
+    <button type="fav" ion-button icon-only (click)="toFav()">
+      <ion-icon name="heart-outline" *ngIf="!fav"></ion-icon>
+      <ion-icon name="heart" *ngIf="fav"></ion-icon>
+    </button>
+  </div>
 </ion-card>

@@ -7,9 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookComponent implements OnInit {
   @Input() book;
+  public fav: boolean = false;
 
   constructor() { }
 
   ngOnInit() {}
 
+  public toFav() {
+    this.fav = !this.fav;
+  }
 }
