@@ -15,6 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('ISBN'); // International Standard Book Number
             $table->string('title');
             $table->string('author');
             $table->float('price');
