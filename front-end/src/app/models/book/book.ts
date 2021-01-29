@@ -1,5 +1,4 @@
 export class Book {
-  items: object;
   id: string;
   title: string;
   subtitle: string;
