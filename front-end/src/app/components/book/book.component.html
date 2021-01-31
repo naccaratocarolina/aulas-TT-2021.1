@@ -5,7 +5,7 @@
     <h2>{{book.subtitle}}</h2>
     <h3>{{book.authors}}</h3>
     
-    <button type="fav" ion-button icon-only (click)="toFav()">
+    <button type="fav" ion-button icon-only (click)="toFav()" (click)="addFavorite()">
       <ion-icon name="heart-outline" *ngIf="!fav"></ion-icon>
       <ion-icon name="heart" *ngIf="fav"></ion-icon>
     </button>

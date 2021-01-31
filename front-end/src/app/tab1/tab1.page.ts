@@ -24,4 +24,9 @@ export class Tab1Page implements OnInit {
       }
     );
   }
+
+  favClicked(event) {
+    console.log(event);
+    alert('Livro adicionado aos favoritos!');
+  }
 }
