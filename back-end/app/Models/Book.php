@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookRequest as BookRequest;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class Book extends Model
 {
@@ -25,10 +25,12 @@ class Book extends Model
 
     public function createBook(BookRequest $request)
     {
+        $user = Auth::user();
+        $this->user_id = $user->id;
+
         $this->title = $request->title;
         $this->author = $request->author;
         $this->price = $request->price;
-        $this->user_id = $request->user_id;
 
         $this->save();
     }

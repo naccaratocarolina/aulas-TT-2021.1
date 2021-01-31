@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Http\Requests\UserRequest as UserRequest;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -54,9 +55,7 @@ class User extends Authenticatable
     public function createUser(UserRequest $request) 
     {
         $this->email = $request->email;
-        $this->hash = $request->password;
-        $this->salt = $request->password;
-        // criar hash e salt
+        $this->password = bcrypt($request->password);
 
         $this->save();
     }
@@ -68,7 +67,7 @@ class User extends Authenticatable
         }
 
         if ($request->password) {
-            // criar hash e salt
+            $this->password = bcrypt($request->password);
         }
 
         $this->save();
