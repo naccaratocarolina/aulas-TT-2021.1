@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
-class UserFactory extends Factory
+class BookFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Book::class;
 
     /**
      * Define the model's default state.
@@ -24,10 +23,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => now(),
-            'password' => bcrypt('senha123'),
-            'remember_token' => Str::random(10),
+            'title' => $this->faker->sentence($nbWords = 5, $variableNbWords = true),
+            'author' => $this->faker->name,
+            'price' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 2, $max = 3)
         ];
     }
 }

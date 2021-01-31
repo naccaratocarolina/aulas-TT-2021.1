@@ -27,7 +27,7 @@ class Book extends Model
     {
         $user = Auth::user();
         $this->user_id = $user->id;
-
+        
         $this->title = $request->title;
         $this->author = $request->author;
         $this->price = $request->price;
@@ -35,7 +35,7 @@ class Book extends Model
         $this->save();
     }
 
-    public function updateBook(Request $request)
+    public function updateBook(BookRequest $request)
     {
        if ($request->title){
         $this->title = $request->title;

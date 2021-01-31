@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('author');
-            $table->float('price');
+            $table->double('price');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
