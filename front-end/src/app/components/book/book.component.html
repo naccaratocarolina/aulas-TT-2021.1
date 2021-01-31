@@ -1,9 +1,9 @@
 <ion-card>
   <img src="{{book.cover}}">
   <div id="book-info">
-    <h1>{{book.title}}</h1>
-    <h2>{{book.subtitle}}</h2>
-    <h3>{{book.authors}}</h3>
+    <h1>{{ book.title | xuxaString }}</h1>
+    <h2>{{ book.subtitle }}</h2>
+    <h3>{{ book.authors }}</h3>
     
     <button type="fav" ion-button icon-only (click)="toFav()">
       <ion-icon name="heart-outline" *ngIf="!fav" (click)="addFavorite()"></ion-icon>
