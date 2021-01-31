@@ -9,15 +9,16 @@ export class BookComponent implements OnInit {
   @Input() book;
   @Output() clickOnFav = new EventEmitter<string>();
 
-  public fav: boolean = false;
+   public fav: boolean = false;
+   public className: string;
 
   constructor() { }
 
-  addFavorite() {
-    this.clickOnFav.emit('Livro adicionado!');
-  }  
-
   ngOnInit() {}
+
+  public addFavorite() {
+    this.clickOnFav.emit('Livro adicionado!');
+  }
 
   public toFav() {
     this.fav = !this.fav;

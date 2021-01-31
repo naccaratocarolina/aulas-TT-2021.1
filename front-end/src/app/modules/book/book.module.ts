@@ -6,7 +6,7 @@ import { XuxaStringModule } from '../../pipes/xuxa-string.module';
 @NgModule({
   entryComponents: [ BookComponent ],
   declarations: [ BookComponent ],
-  imports: [ CommonModule, XuxaStringModule ], 
+  imports: [ CommonModule, XuxaStringModule ],
   exports: [ BookComponent ]
 })
 export class BookModule { }

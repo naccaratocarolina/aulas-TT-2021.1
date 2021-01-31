@@ -7,7 +7,7 @@ export class XuxaStringPipe implements PipeTransform {
 
   transform(value: string ): string {
     const firstChar = value.charAt(0);
-    switch( firstChar ) {
+    switch (firstChar) {
       case 'A':
         return 'A de amor';
       case 'B':
@@ -15,7 +15,7 @@ export class XuxaStringPipe implements PipeTransform {
       case 'C':
         return 'C de coração';
       case 'E':
-        return 'E de EJCM <3'
+        return 'E de EJCM <3';
       default:
         return value;
     }
