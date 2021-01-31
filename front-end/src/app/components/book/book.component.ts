@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-book',
@@ -7,9 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookComponent implements OnInit {
   @Input() book;
+  @Output() clickOnFav = new EventEmitter<string>();
+
   public fav: boolean = false;
 
   constructor() { }
+
+  addFavorite() {
+    this.clickOnFav.emit('Livro adicionado!');
+  }  
 
   ngOnInit() {}
 
