@@ -12,8 +12,13 @@ git clone https://github.com/naccaratocarolina/liber-app.git
 ```
 
 ### 1. Front-end
+* Dar npm install
 ```bash
 npm install
+```
+
+* Servir o front
+```bash
 ionic serve
 ```
 
