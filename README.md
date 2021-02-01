@@ -18,6 +18,11 @@ ionic serve
 ```
 
 ### 2. Back-end
+* Dar composer install
+```bash
+composer install
+```
+
 * Crie um banco de dados local
 ```bash
 mysql -u root -p
