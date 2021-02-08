@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PassportController;
+use App\Http\Controllers\BookController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,27 +19,27 @@ use Illuminate\Support\Facades\Route;
  */
 
 // Passport Controller
-Route::post('register', 'PassportController@register');
-Route::post('login', 'PassportController@login');
+Route::post('register', [PassportController::class, 'register']);
+Route::post('login', [PassportController::class, 'login']);
 
 // User Controller
-Route::get('users', 'UserController@index');
-Route::get('users/{id}', 'UserController@show');
-Route::post('users', 'UserController@create');
+Route::get('users', [UserController::class, 'index']);
+Route::get('users/{id}', [UserController::class, 'show']);
+Route::post('users', [UserController::class, 'create']);
 
 Route::group(['middleware' => 'auth:api'], function() {
     // Passport Controller
-    Route::get('logout', 'PassportController@logout');
-    Route::get('getDetails', 'PassportController@getDetails');
+    Route::get('logout', [PassportController::class, 'logout']);
+    Route::get('getDetails', [PassportController::class, 'getDetails']);
     
     // User Controller
-    Route::put('users/{id}', 'UserController@update');
-    Route::delete('users/{id}', 'UsersController@destroy');
+    Route::put('users/{id}', [UserController::class, 'update']);
+    Route::delete('users/{id}', [UsersController::class, 'destroy']);
 
     // Book Controller
-    Route::get('books', 'BookController@index');
-    Route::get('books/{id}', 'BookController@show');
-    Route::post('books', 'BookController@create');
-    Route::put('books/{id}', 'BookController@update');
-    Route::delete('books/{id}', 'BookController@destroy');
+    Route::get('books', [BookController::class, 'index']);
+    Route::get('books/{id}', [BookController::class, 'show']);
+    Route::post('books', [BookController::class, 'create']);
+    Route::put('books/{id}', [BookController::class, 'update']);
+    Route::delete('books/{id}', [BookController::class, 'destroy']);
 });
