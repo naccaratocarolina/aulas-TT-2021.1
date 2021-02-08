@@ -12,12 +12,22 @@ git clone https://github.com/naccaratocarolina/liber-app.git
 ```
 
 ### 1. Front-end
+* Dar npm install
 ```bash
 npm install
+```
+
+* Servir o front
+```bash
 ionic serve
 ```
 
 ### 2. Back-end
+* Dar composer install
+```bash
+composer install
+```
+
 * Crie um banco de dados local
 ```bash
 mysql -u root -p
